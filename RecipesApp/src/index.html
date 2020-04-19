@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Recipe App</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="styles/app.css" type="text/css" />
+</head>
+<body>
+    <div class="row">
+        <div class="col-md-1">
+            <img class="logoImg" src="images/banner.png" />
+        </div>
+        <div class="col-md-11 pull-left">
+            <h1></h1>
+        </div>
+    </div>
+    <h3><b><i>Add new recipies:</h3></b></i>
+    <div>
+        <form>
+            <div class="box">
+                Name Recipe:<input type="text" name="namenewrecipe"><br>
+                Ingredient:<input type="text" name="ingredient"><br>
+                Text:<textarea name="text" cols="50" rows="10"></textarea><br>
+                Time:<input type="text" name="Time">
+                <br>
+                
+                    <input type="checkbox" name="recipe" value="Appetizers">Appetizers<br>
+                    <input type="checkbox" name="recipe" value="Pasta dishes">Pasta dishes<br>
+                    <input type="checkbox" name="recipe" value="Vegetarian dishes">Vegetarian dishes<br>
+                    <input type="checkbox" name="recipe" value="Salads">Salads<br>
+                    <input type="checkbox" name="recipe" value="Meat dishes">Meat dishes<br>
+                    <input type="checkbox" name="recipe" value="Breads">Breads<br>
+                    <input type="checkbox" name="recipe" value="Sauces">Sauces<br>
+                    <input type="checkbox" name="recipe" value="Desserts">Desserts<br>
+                    <input type="submit" value="Add Recipe">
+            </div>
+
+        </form>
+    </div>
+    <h1><b><i>Recipe Type</h1></b></i>
+    <div>
+        <select id="RecipeCategory">
+            <option disabled>Choose type:</option>
+        </select>
+    </div>
+     <h2>Short Description :</h2>
+    <div id="recipeDesc"></div>
+
+    <div class="foodGroups" id="FoodGroups"></div>
+
+    <h2>Recipe:</h2>
+    <div class="examples" id="examples"></div>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="scripts/recipeLoader.js"></script>
+    <script src="scripts/renderer.js"></script>
+    <script src="scripts/baseRecipeCategory.js"></script>
+    <script src="scripts/recipeCategory.js"></script>
+    <script src="scripts/recipeCategorySummary.js"></script>
+    <script src="scripts/recipeCategories.js"></script>
+    <script src="scripts/foodGroup.js"></script>
+    <script src="scripts/recipeExample.js"></script>
+    <script src="scripts/ingredient.js"></script>
+    <script src="scripts/bootstrapper.js"></script>
+
+    <footer>
+        <img class="footer" src="images/footer.png" />
+    </footer>
+</body>
+</html>
