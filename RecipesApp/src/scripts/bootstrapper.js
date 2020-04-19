@@ -5,13 +5,8 @@ var Bootstrapper = /** @class */ (function () {
         var el = document.getElementById('RecipeCategory');
         try {
             var category = this.recipeCategories.items
-                //Find selected item by name
                 .filter(function (item) { return item.name === el.value; })
-                //return the item
                 .reduce(function (item) {
-                //TODO (CONSTRUCTORS EXERCISE)
-                //Change the RecipeCategory code below so that the property values are
-                //passed into the constructor rather than set individually.
                 var rc = new RecipeCategory({
                     name: el.value,
                     foodGroups: item.foodGroups,

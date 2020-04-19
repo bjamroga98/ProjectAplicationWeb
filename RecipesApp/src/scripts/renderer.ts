@@ -8,9 +8,6 @@
             this.renderError();
         }
     }
-
-    //TODO
-    //Example how the RecipeCategories<T> generic is used.
     renderCategories(recipeCategoriesSummary: RecipeCategories<IRecipeCategorySummary>) {
         var recipeSelect = document.getElementById('RecipeCategory');
         recipeCategoriesSummary.items.forEach((category) => {
@@ -20,11 +17,7 @@
             recipeSelect.appendChild(opt);
         });
     }
-
-    //TODO (INTERFACES EXERCISE)
-    //1. Change the category parameter type to IRecipeCategory
     renderCategory(category: IRecipeCategory) {
-        //Update foodgroups bullet points
         var foodGroups = (<HTMLSelectElement> document.getElementById('FoodGroups'));
         foodGroups.value = '';
         var html = '<ul>';
@@ -32,19 +25,13 @@
             html += '<li>' + category.foodGroups[i].name + '</li>';
         }
         foodGroups.innerHTML = html + '</ul>';
-
-        //Update description
         var el = (<HTMLSelectElement> document.getElementById('recipeDesc'));
         el.innerHTML = category.description;
 
         this.renderExamples(category);
 
     }
-
-    //TODO (INTERFACES EXERCISE)
-    //1. Change the category parameter type to IRecipeCategory
     renderExamples(category: IRecipeCategory) {
-        //Update examples
         var examples = (<HTMLSelectElement> document.getElementById('examples'));
         examples.value = '';
 

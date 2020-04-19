@@ -2,11 +2,6 @@ var RecipeLoader = /** @class */ (function () {
     function RecipeLoader(url) {
         this.url = url;
     }
-    //TODO (GENERICS EXERCISE)
-    //1. Change the load() function's return type to use the JQueryPromise<IRecipeData> generic
-    //   This will provide the caller with much better code help as they work with the return value.
-    //2. If you're in VS Code, right-click on JQueryPromise and select "Peek Definition" from the menu
-    //3. Take a moment to explore how the JQueryPromise interface uses generics
     RecipeLoader.prototype.load = function () {
         var _this = this;
         return $.getJSON(this.url).then(function (data) {
@@ -18,16 +13,9 @@ var RecipeLoader = /** @class */ (function () {
         var _this = this;
         if (data) {
             var categories = data.recipeCategories;
-            //TODO (INTERFACES EXERCISE)
-            //Pass IRecipeCategory as the type to the generic below
             var recipeCategories = new RecipeCategories();
-            //TODO (INTERFACES EXERCISE)
-            //Pass IRecipeCategorySummary as the type to the generic below
             var recipeCategoriesSummary = new RecipeCategories();
             categories.forEach(function (category) {
-                //TODO (CONSTRUCTORS EXERCISE)
-                //Change the RecipeCategory code below so that the property values are
-                //passed into the constructor rather than set individually.
                 var recipeCategory = new RecipeCategory({
                     name: category.title,
                     foodGroups: _this.getFoodGroups(category),
@@ -51,11 +39,7 @@ var RecipeLoader = /** @class */ (function () {
         }
     };
     RecipeLoader.prototype.getFoodGroups = function (category) {
-        //Map foodgroups data to TS object
         return category.foodGroups.map(function (foodGroup) {
-            //TODO (Constructors exercise)
-            //Change the FoodGroup code below so that the property value is
-            //passed into the constructor rather than set individually.
             var group = new FoodGroup(foodGroup.title);
             return group;
         });
