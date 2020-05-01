@@ -3,12 +3,12 @@
   recipeCategories: RecipeCategories<IRecipeCategory>;
 
   loadRecipes() {
-      var el = (<HTMLSelectElement> document.getElementById('RecipeCategory'));
+      let el = (<HTMLSelectElement> document.getElementById('RecipeCategory'));
       try {
           let category = this.recipeCategories.items
               .filter(item => item.name === el.value)
               .reduce(item => {
-                var rc = new RecipeCategory({
+                let rc = new RecipeCategory({
                   name: el.value,
                   foodGroups: item.foodGroups,
                   description: item.description,
@@ -32,7 +32,7 @@
   
 }
 window.onload = () => { 
-  var bootstrapper = new Bootstrapper();
+  let bootstrapper = new Bootstrapper();
   bootstrapper.init();
 };
 

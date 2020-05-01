@@ -13,8 +13,8 @@ var RecipeLoader = /** @class */ (function () {
         var _this = this;
         if (data) {
             var categories = data.recipeCategories;
-            var recipeCategories = new RecipeCategories();
-            var recipeCategoriesSummary = new RecipeCategories();
+            var recipeCategories_1 = new RecipeCategories();
+            var recipeCategoriesSummary_1 = new RecipeCategories();
             categories.forEach(function (category) {
                 var recipeCategory = new RecipeCategory({
                     name: category.title,
@@ -22,16 +22,16 @@ var RecipeLoader = /** @class */ (function () {
                     description: category.details,
                     examples: _this.getExamples(category)
                 });
-                recipeCategories.items.push(recipeCategory);
+                recipeCategories_1.items.push(recipeCategory);
                 var recipeCategorySummary = new RecipeCategorySummary({
                     text: category.title,
                     title: category.details
                 });
-                recipeCategoriesSummary.items.push(recipeCategorySummary);
+                recipeCategoriesSummary_1.items.push(recipeCategorySummary);
             });
             return {
-                recipeCategories: recipeCategories,
-                recipeCategoriesSummary: recipeCategoriesSummary
+                recipeCategories: recipeCategories_1,
+                recipeCategoriesSummary: recipeCategoriesSummary_1
             };
         }
         else {

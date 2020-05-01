@@ -32,3 +32,12 @@ interface IRecipeCategorySummary {
     text: string;
     title: string;
 }
+
+interface IAddRecipe{
+  name: string;
+  ingredient: string;
+  text: string;
+  time: string;
+  checkbox: string;
+  submit: string;
+}

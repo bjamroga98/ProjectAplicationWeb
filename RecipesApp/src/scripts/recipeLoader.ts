@@ -10,8 +10,8 @@
     mapData(data: any) : IRecipeData {
         if (data) {
             let categories: any[] = data.recipeCategories;
-            var recipeCategories = new RecipeCategories<IRecipeCategory>();
-            var recipeCategoriesSummary = new RecipeCategories<IRecipeCategorySummary>();
+            let recipeCategories = new RecipeCategories<IRecipeCategory>();
+            let recipeCategoriesSummary = new RecipeCategories<IRecipeCategorySummary>();
             
             categories.forEach((category: any) => {
                 let recipeCategory = new RecipeCategory({
@@ -43,7 +43,7 @@
 
     getFoodGroups(category: any) : FoodGroup[] {
         return category.foodGroups.map((foodGroup: any) => {
-            var group = new FoodGroup(foodGroup.title);
+            let group = new FoodGroup(foodGroup.title);
             return group;
         });
     }
