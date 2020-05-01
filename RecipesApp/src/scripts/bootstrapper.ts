@@ -1,6 +1,7 @@
 ﻿class Bootstrapper {
   renderer: Renderer;
   recipeCategories: RecipeCategories<IRecipeCategory>;
+ 
 
   loadRecipes() {
       let el = (<HTMLSelectElement> document.getElementById('RecipeCategory'));

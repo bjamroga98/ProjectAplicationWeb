@@ -12,6 +12,7 @@
             let categories: any[] = data.recipeCategories;
             let recipeCategories = new RecipeCategories<IRecipeCategory>();
             let recipeCategoriesSummary = new RecipeCategories<IRecipeCategorySummary>();
+
             
             categories.forEach((category: any) => {
                 let recipeCategory = new RecipeCategory({
@@ -64,4 +65,5 @@
             return new Ingredient(value);
         });
     }
+
 } 
