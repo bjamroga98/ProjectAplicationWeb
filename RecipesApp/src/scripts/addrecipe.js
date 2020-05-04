@@ -100,6 +100,7 @@ class SubmitButton {
         const div = document.createElement('div');
         div.appendChild(this.element);
         return div;
+        window.location.href = "C:\Users\Maciej\Documents\GitHub\ProjectAplicationWeb\RecipesApp\src\json\recipeTypes.json";
     }
 }
 class Form {
@@ -119,6 +120,7 @@ class Form {
         let value = '';
         this.fields.forEach(field => {
             value += `${field.label}: ${field.getvalue()}\n`;
+            window.location.href = "C:\Users\Maciej\Documents\GitHub\ProjectAplicationWeb\RecipesApp\src\json\recipeTypes.json";
         });
         return value;
     }
