@@ -1,7 +1,6 @@
-var Ingredient = /** @class */ (function () {
-    function Ingredient(name) {
+class Ingredient {
+    constructor(name) {
         this.name = name;
     }
-    return Ingredient;
-}());
+}
 //# sourceMappingURL=ingredient.js.map

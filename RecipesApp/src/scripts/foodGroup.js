@@ -1,7 +1,6 @@
-var FoodGroup = /** @class */ (function () {
-    function FoodGroup(name) {
+class FoodGroup {
+    constructor(name) {
         this.name = name;
     }
-    return FoodGroup;
-}());
+}
 //# sourceMappingURL=foodGroup.js.map

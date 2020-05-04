@@ -23,11 +23,11 @@ class Cook {
         this.form = new Form('box');
     }
     createForm(): void{
-        let name = new InputRecipe('text','Name Recipe');
-        let ingredient = new InputRecipe('text', 'Ingredient');
-        let text = new TextAreaRecipe('text','text');
-        let pretime = new InputRecipe('text','PreTime');
-        let types = new CheckboxRecipe('typ','types');
+        let name = new InputRecipe('text','Name Recipe:');
+        let ingredient = new InputRecipe('text', 'Ingredient:');
+        let text = new TextAreaRecipe('text','Text:');
+        let pretime = new InputRecipe('text','PreTime:');
+        let types = new CheckboxRecipe('typ','categories:');
 
         this.form.button = new SubmitButton('submitButton', 'button')
         this.form.fields.push(name);

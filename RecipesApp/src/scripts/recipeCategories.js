@@ -1,7 +1,6 @@
-var RecipeCategories = /** @class */ (function () {
-    function RecipeCategories() {
+class RecipeCategories {
+    constructor() {
         this.items = [];
     }
-    return RecipeCategories;
-}());
+}
 //# sourceMappingURL=recipeCategories.js.map

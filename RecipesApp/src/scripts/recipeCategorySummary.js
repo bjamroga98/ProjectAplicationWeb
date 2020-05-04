@@ -1,8 +1,7 @@
-var RecipeCategorySummary = /** @class */ (function () {
-    function RecipeCategorySummary(summary) {
+class RecipeCategorySummary {
+    constructor(summary) {
         this.text = summary.text;
         this.title = summary.title;
     }
-    return RecipeCategorySummary;
-}());
+}
 //# sourceMappingURL=recipeCategorySummary.js.map

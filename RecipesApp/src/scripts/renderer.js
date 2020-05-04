@@ -1,5 +1,5 @@
-var Renderer = /** @class */ (function () {
-    function Renderer(recipeCategoriesSummary) {
+class Renderer {
+    constructor(recipeCategoriesSummary) {
         this.recipeCategoriesSummary = recipeCategoriesSummary;
         if (recipeCategoriesSummary) {
             this.renderCategories(recipeCategoriesSummary);
@@ -8,34 +8,34 @@ var Renderer = /** @class */ (function () {
             this.renderError();
         }
     }
-    Renderer.prototype.renderCategories = function (recipeCategoriesSummary) {
-        var recipeSelect = document.getElementById('RecipeCategory');
-        recipeCategoriesSummary.items.forEach(function (category) {
-            var opt = document.createElement('option');
+    renderCategories(recipeCategoriesSummary) {
+        let recipeSelect = document.getElementById('RecipeCategory');
+        recipeCategoriesSummary.items.forEach((category) => {
+            let opt = document.createElement('option');
             opt.setAttribute('title', category.title);
             opt.innerHTML = category.text;
             recipeSelect.appendChild(opt);
         });
-    };
-    Renderer.prototype.renderCategory = function (category) {
-        var foodGroups = document.getElementById('FoodGroups');
+    }
+    renderCategory(category) {
+        let foodGroups = document.getElementById('FoodGroups');
         foodGroups.value = '';
-        var html = '<ul>';
+        let html = '<ul>';
         for (var i = 0, len = category.foodGroups.length; i < len; i++) {
             html += '<li>' + category.foodGroups[i].name + '</li>';
         }
         foodGroups.innerHTML = html + '</ul>';
-        var el = document.getElementById('recipeDesc');
+        let el = document.getElementById('recipeDesc');
         el.innerHTML = category.description;
         this.renderExamples(category);
-    };
-    Renderer.prototype.renderExamples = function (category) {
-        var examples = document.getElementById('examples');
+    }
+    renderExamples(category) {
+        let examples = document.getElementById('examples');
         examples.value = '';
-        var html = '<ol>';
+        let html = '<ol>';
         for (var i = 0, len = category.examples.length; i < len; i++) {
-            var example = category.examples[i];
-            var ingredients = example.ingredients.map(function (ingredient) {
+            let example = category.examples[i];
+            let ingredients = example.ingredients.map((ingredient) => {
                 return ingredient.name;
             });
             html += '<li>' +
@@ -46,11 +46,10 @@ var Renderer = /** @class */ (function () {
                 '</li>';
         }
         examples.innerHTML = html + '</ol>';
-    };
-    Renderer.prototype.renderError = function () {
-        var examples = document.getElementById('examples');
+    }
+    renderError() {
+        let examples = document.getElementById('examples');
         examples.value = 'Unable to load data!';
-    };
-    return Renderer;
-}());
+    }
+}
 //# sourceMappingURL=renderer.js.map

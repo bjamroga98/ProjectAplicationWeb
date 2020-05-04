@@ -1,13 +1,11 @@
-var Bootstrapper = /** @class */ (function () {
-    function Bootstrapper() {
-    }
-    Bootstrapper.prototype.loadRecipes = function () {
-        var el = document.getElementById('RecipeCategory');
+class Bootstrapper {
+    loadRecipes() {
+        let el = document.getElementById('RecipeCategory');
         try {
-            var category = this.recipeCategories.items
-                .filter(function (item) { return item.name === el.value; })
-                .reduce(function (item) {
-                var rc = new RecipeCategory({
+            let category = this.recipeCategories.items
+                .filter(item => item.name === el.value)
+                .reduce(item => {
+                let rc = new RecipeCategory({
                     name: el.value,
                     foodGroups: item.foodGroups,
                     description: item.description,
@@ -20,21 +18,19 @@ var Bootstrapper = /** @class */ (function () {
         catch (ex) {
             alert(ex.message);
         }
-    };
-    Bootstrapper.prototype.init = function () {
-        var _this = this;
-        var categoriesSelect = document.getElementById('RecipeCategory');
-        categoriesSelect.onchange = function () { return _this.loadRecipes(); };
-        var recipeLoader = new RecipeLoader("/json/recipeTypes.json");
-        recipeLoader.load().then(function (recipeData) {
-            _this.recipeCategories = recipeData.recipeCategories;
-            _this.renderer = new Renderer(recipeData.recipeCategoriesSummary);
+    }
+    init() {
+        let categoriesSelect = document.getElementById('RecipeCategory');
+        categoriesSelect.onchange = () => this.loadRecipes();
+        let recipeLoader = new RecipeLoader("/json/recipeTypes.json");
+        recipeLoader.load().then((recipeData) => {
+            this.recipeCategories = recipeData.recipeCategories;
+            this.renderer = new Renderer(recipeData.recipeCategoriesSummary);
         });
-    };
-    return Bootstrapper;
-}());
-window.onload = function () {
-    var bootstrapper = new Bootstrapper();
+    }
+}
+window.onload = () => {
+    let bootstrapper = new Bootstrapper();
     bootstrapper.init();
 };
 //# sourceMappingURL=bootstrapper.js.map

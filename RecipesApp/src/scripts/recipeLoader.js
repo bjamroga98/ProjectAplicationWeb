@@ -1,65 +1,61 @@
-var RecipeLoader = /** @class */ (function () {
-    function RecipeLoader(url) {
+class RecipeLoader {
+    constructor(url) {
         this.url = url;
     }
-    RecipeLoader.prototype.load = function () {
-        var _this = this;
-        return $.getJSON(this.url).then(function (data) {
-            var recipeData = _this.mapData(data);
+    load() {
+        return $.getJSON(this.url).then((data) => {
+            var recipeData = this.mapData(data);
             return recipeData;
         });
-    };
-    RecipeLoader.prototype.mapData = function (data) {
-        var _this = this;
+    }
+    mapData(data) {
         if (data) {
-            var categories = data.recipeCategories;
-            var recipeCategories_1 = new RecipeCategories();
-            var recipeCategoriesSummary_1 = new RecipeCategories();
-            categories.forEach(function (category) {
-                var recipeCategory = new RecipeCategory({
+            let categories = data.recipeCategories;
+            let recipeCategories = new RecipeCategories();
+            let recipeCategoriesSummary = new RecipeCategories();
+            categories.forEach((category) => {
+                let recipeCategory = new RecipeCategory({
                     name: category.title,
-                    foodGroups: _this.getFoodGroups(category),
+                    foodGroups: this.getFoodGroups(category),
                     description: category.details,
-                    examples: _this.getExamples(category)
+                    examples: this.getExamples(category)
                 });
-                recipeCategories_1.items.push(recipeCategory);
-                var recipeCategorySummary = new RecipeCategorySummary({
+                recipeCategories.items.push(recipeCategory);
+                let recipeCategorySummary = new RecipeCategorySummary({
                     text: category.title,
                     title: category.details
                 });
-                recipeCategoriesSummary_1.items.push(recipeCategorySummary);
+                recipeCategoriesSummary.items.push(recipeCategorySummary);
             });
             return {
-                recipeCategories: recipeCategories_1,
-                recipeCategoriesSummary: recipeCategoriesSummary_1
+                recipeCategories: recipeCategories,
+                recipeCategoriesSummary: recipeCategoriesSummary
             };
         }
         else {
             return null;
         }
-    };
-    RecipeLoader.prototype.getFoodGroups = function (category) {
-        return category.foodGroups.map(function (foodGroup) {
-            var group = new FoodGroup(foodGroup.title);
+    }
+    getFoodGroups(category) {
+        return category.foodGroups.map((foodGroup) => {
+            let group = new FoodGroup(foodGroup.title);
             return group;
         });
-    };
-    RecipeLoader.prototype.getExamples = function (category) {
-        var _this = this;
-        return category.examples.map(function (example) {
+    }
+    getExamples(category) {
+        return category.examples.map((example) => {
             return new Example({
                 name: example.name,
-                ingredients: _this.getIngredients(example),
+                ingredients: this.getIngredients(example),
                 text: example.text,
                 prepTime: example.prepTime
             });
         });
-    };
-    RecipeLoader.prototype.getIngredients = function (example) {
-        return example.ingredients.map(function (value) {
+    }
+    getIngredients(example) {
+        return example.ingredients.map((value) => {
             return new Ingredient(value);
         });
-    };
-    return RecipeLoader;
-}());
+    }
+}
 //# sourceMappingURL=recipeLoader.js.map

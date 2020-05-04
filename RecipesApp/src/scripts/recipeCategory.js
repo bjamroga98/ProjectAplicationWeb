@@ -1,24 +1,8 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var RecipeCategory = /** @class */ (function (_super) {
-    __extends(RecipeCategory, _super);
-    function RecipeCategory(recipeCategory) {
-        var _this = _super.call(this, recipeCategory.name, recipeCategory.foodGroups) || this;
-        _this.description = recipeCategory.description;
-        _this.examples = recipeCategory.examples;
-        return _this;
+class RecipeCategory extends BaseRecipeCategory {
+    constructor(recipeCategory) {
+        super(recipeCategory.name, recipeCategory.foodGroups);
+        this.description = recipeCategory.description;
+        this.examples = recipeCategory.examples;
     }
-    return RecipeCategory;
-}(BaseRecipeCategory));
+}
 //# sourceMappingURL=recipeCategory.js.map
