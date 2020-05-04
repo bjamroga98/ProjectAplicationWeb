@@ -12,26 +12,13 @@
     
     <div>
         <form>
-            <div class="box">
-                Name Recipe:<input type="text" name="namenewrecipe"><br>
-                Ingredient:<input type="text" name="ingredient"><br>
-                Text:<textarea name="text" cols="50" rows="10"></textarea><br>
-                Time:<input type="text" name="Time">
-                <br>
-                
-                    <input type="checkbox" name="recipe" value="Appetizers">Appetizers<br>
-                    <input type="checkbox" name="recipe" value="Pasta dishes">Pasta dishes<br>
-                    <input type="checkbox" name="recipe" value="Vegetarian dishes">Vegetarian dishes<br>
-                    <input type="checkbox" name="recipe" value="Salads">Salads<br>
-                    <input type="checkbox" name="recipe" value="Meat dishes">Meat dishes<br>
-                    <input type="checkbox" name="recipe" value="Breads">Breads<br>
-                    <input type="checkbox" name="recipe" value="Sauces">Sauces<br>
-                    <input type="checkbox" name="recipe" value="Desserts">Desserts<br>
-                    <input type="image" src="images/add.png">
+            <div id="box">
+                    <a href="json/recipeTypes.json"><input type="image" src="images/add.png"></a>
             </div>
 
         </form>
     </div>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="scripts/addrecipe.js"></script>
 
     <footer>

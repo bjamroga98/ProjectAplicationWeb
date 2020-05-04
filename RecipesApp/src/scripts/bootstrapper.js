@@ -11,7 +11,7 @@ var Bootstrapper = /** @class */ (function () {
                     name: el.value,
                     foodGroups: item.foodGroups,
                     description: item.description,
-                    examples: item.examples
+                    examples: item.examples,
                 });
                 return rc;
             });

@@ -53,6 +53,8 @@
         examples.innerHTML = html + '</ol>';
     }
 
+    
+
     renderError() {
         let examples = (<HTMLSelectElement> document.getElementById('examples'));
         examples.value = 'Unable to load data!';

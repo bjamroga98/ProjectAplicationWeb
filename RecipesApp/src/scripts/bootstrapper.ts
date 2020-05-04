@@ -1,7 +1,7 @@
 ﻿class Bootstrapper {
   renderer: Renderer;
   recipeCategories: RecipeCategories<IRecipeCategory>;
- 
+
 
   loadRecipes() {
       let el = (<HTMLSelectElement> document.getElementById('RecipeCategory'));
@@ -13,7 +13,7 @@
                   name: el.value,
                   foodGroups: item.foodGroups,
                   description: item.description,
-                  examples: item.examples
+                  examples: item.examples,
                 });
                 return rc;                
               });
