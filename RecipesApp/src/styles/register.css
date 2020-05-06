@@ -41,7 +41,7 @@ textarea
 
 .registerbox{
     width:320px;
-    height:550px;
+    height:450px;
     background: rgb(119, 201, 119);
     color: black;
     top:50%;
@@ -52,13 +52,6 @@ textarea
     padding: 70px 30px;
 }
 
-.avatar{
-    width: 100px;
-    height:100px;
-    border-radius: 50%;
-    top: -50%;
-    left: calc(50% -50px );
-}
 h1{
     margin: 0;
     padding:0 0 20px;
