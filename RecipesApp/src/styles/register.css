@@ -39,10 +39,10 @@ textarea
     float: left;
 }
 
-.loginbox{
+.registerbox{
     width:320px;
-    height:420px;
-    background: rgb(144, 209, 144);
+    height:550px;
+    background: rgb(119, 201, 119);
     color: black;
     top:50%;
     left:50%;
@@ -66,13 +66,13 @@ h1{
     font-size: 22px;
 }
 
-.loginbox input{
+.registerbox input{
     width: 100%;
     margin-bottom: 20px;
 
 }
 
-.loginbox input[type="text"],input[type="password"]{
+.registerbox input[type="text"],input[type="password"]{
     border: none;
     border-bottom: 1px solid #fff;
     background: transparent;
@@ -82,7 +82,7 @@ h1{
     font-size: 16px;
 }
 
-.loginbox input[type="submit"]{
+.registerbox input[type="submit"]{
     border: none;
     outline:none;
     height:40px;
@@ -92,19 +92,8 @@ h1{
     border-radius: 20px;
 }
 
-.loginbox input[type="submit"]:hover {
+.registerbox input[type="submit"]:hover {
     cursor: pointer;
     background: #ffc107;
     color: #000;
-}
-
-.loginbox a{
-    text-decoration: none;
-    font-size: 12px;
-    line-height: 20px;
-    color: white;
-}
-
-.loginbox a:hover{
-   color: #ffc107;
 }
