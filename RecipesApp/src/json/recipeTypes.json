@@ -1,6 +1,7 @@
 ﻿{
     "recipeCategories": [
         {
+            "AddRecipe": [],
             "title": "Appetizers",
             "foodGroups": [ ],
             "details": "These foods are designed to awaken the palate prior to the meal. They should be savory, light, and easy to eat.",
@@ -31,6 +32,7 @@
             ]
         },
         {
+            "AddRecipe": [],
             "title": "Pasta dishes",
             "foodGroups": [ ],
             "details": "Pasta dishes are served as a first course in many parts of the world. They are among the most versatile of dishes and cook's can get very creative with them.",
@@ -53,6 +55,7 @@
             ]
         },
         {
+            "AddRecipe": [],
             "title": "Vegetarian dishes",
             "foodGroups": [  ],
             "details": "These dishes are not just for vegetarians. Including dishes based around vegetables, grains, or legumes help round out your meal and offer variety for those who choose not to eat meat.",
@@ -72,6 +75,7 @@
             ]
         },
         {
+            "AddRecipe": [],
             "title": "Salads",
             "foodGroups": [  ],
             "details": "Some cooks serve a salad course at the end of the meal. These dishes can include just about anything including a variety of cured meats and even grains.",
@@ -87,6 +91,7 @@
             ]
         },
         {
+            "AddRecipe": [],
             "title": "Meat dishes",
             "foodGroups": [
                 
@@ -109,6 +114,7 @@
             ]
         },
         {
+            "AddRecipe": [],
             "title": "Breads",
             "foodGroups": [ ],
             "details": "Breads provide a great source of grain and can be used to complement any meal. Many cooks prepare bread as an appetizer.",
@@ -122,9 +128,11 @@
                     "text":["All ingredients should be at room temperature. Mix flour, baking soda, sift and put aside.You don't have to use a mixer in this recipe. In a large dish, mix melted butter with crushed bananas (just crush them with a fork). Stir sugar, lightly beaten egg, vanilla. Finally, add the flour mixed with soda and a pinch of salt. Mix with a fork or cooking rod, only to combine the ingredients.Transfer the dough into a 10 x 20 cm cake tray, greased with butter and sprinkled with wheat flour. Bake for 50 - 60 minutes in an oven preheated to 170 ° C, or shorter, to the so-called dry stick. Take it out, let it cool down."],
                     "prepTime": "60 Minutes" }
             ]
+            
 
         },
         {
+            "AddRecipe": [],
             "title": "Sauces",
             "foodGroups": [ ],
             "details": "While not a 'dish' in the strict sense, sauces are an integral part of a well-balanced flavor profile for most dishes. Use them with meats, vegetables, or even a dip for breads.",
@@ -140,6 +148,7 @@
             ]
         },
         {
+            "AddRecipe": [],
             "title": "Desserts",
             "foodGroups": [ ],
             "details": "No meal is complete without something sweet to end the dining experience. Cooks have gotten very creative with desserts turning them into artwork that makes a meal memorable.",
