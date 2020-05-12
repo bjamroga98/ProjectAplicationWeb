@@ -3,7 +3,7 @@ enum AddRecipe {
     IngredientInput ='ingredient',
     TextAreaInput = 'textarea',
     PreTime = 'pretime',
-    Checkbox = 'checkbox',
+    checkboxInput = 'checkbox',
     submitInput='submit'
    
 }
@@ -36,6 +36,16 @@ class Cook {
         this.form.fields.push(pretime);
         this.form.fields.push(types);
         this.form.render();
+    };
+    saveToLocalStorage = (data: object) =>{
+        if(this.form) localStorage.setItem(this.form,JSON.stringify(data));
+    };
+    getItemsFromLocalStorage = () =>{
+        const items = {...localStorage};
+        for (const [key, value] of Object.entries(items)){
+            console.log(key, value);
+            console.log(JSON.parse(value));
+        }
     }
 }
 class InputRecipe implements Recipe{
@@ -64,7 +74,18 @@ class InputRecipe implements Recipe{
     }
     getvalue(): any{
         return this.element.value
+    };
+    saveToLocalStorage = (data: object) =>{
+        if(this.label) localStorage.setItem(this.name,JSON.stringify(data));
+    };
+    getItemsFromLocalStorage = () =>{
+        const items = {...localStorage};
+        for (const [key, value] of Object.entries(items)){
+            console.log(key, value);
+            console.log(JSON.parse(value));
+        }
     }
+
 }
 class CheckboxRecipe implements Recipe{
     name: string;
@@ -77,7 +98,7 @@ class CheckboxRecipe implements Recipe{
         this.name=name;
         this.label=label;
         this.element.name= this.name;
-        this.element.type = AddRecipe.NameInput;
+        this.element.type = AddRecipe.checkboxInput;
     }
     render(): HTMLElement{
         const div = document.createElement('div');
@@ -91,7 +112,17 @@ class CheckboxRecipe implements Recipe{
         return div;
     }
     getvalue(): any{
-        return this.element.value
+        return this.element.checked
+    };
+    saveToLocalStorage = (data: object) =>{
+        if(this.label) localStorage.setItem(this.name,JSON.stringify(data));
+    };
+    getItemsFromLocalStorage = () =>{
+        const items = {...localStorage};
+        for (const [key, value] of Object.entries(items)){
+            console.log(key, value);
+            console.log(JSON.parse(value));
+        }
     }
 }
 
@@ -121,6 +152,16 @@ class TextAreaRecipe implements Recipe{
     }
     getvalue(): any{
         return this.element.value
+    };
+    saveToLocalStorage = (data: object) =>{
+        if(this.label) localStorage.setItem(this.name,JSON.stringify(data));
+    };
+    getItemsFromLocalStorage = () =>{
+        const items = {...localStorage};
+        for (const [key, value] of Object.entries(items)){
+            console.log(key, value);
+            console.log(JSON.parse(value));
+        }
     }
 }
 
@@ -139,7 +180,17 @@ render(): HTMLElement{
     const div = document.createElement('div');
     div.appendChild(this.element);
     return div;
-    window.location.href ="C:\Users\Maciej\Documents\GitHub\ProjectAplicationWeb\RecipesApp\src\json\recipeTypes.json";
+    
+};
+saveToLocalStorage = (data: object) =>{
+    if(this.name) localStorage.setItem(this.name,JSON.stringify(data));
+};
+getItemsFromLocalStorage = () =>{
+    const items = {...localStorage};
+    for (const [key, value] of Object.entries(items)){
+        console.log(key, value);
+        console.log(JSON.parse(value));
+    }
 }
 }
 class Form{
@@ -164,10 +215,11 @@ class Form{
         let value = '';
         this.fields.forEach(field=>{
             value +=`${field.label}: ${field.getvalue()}\n`
-            window.location.href ="C:\Users\Maciej\Documents\GitHub\ProjectAplicationWeb\RecipesApp\src\json\recipeTypes.json";
+           
         })
         return value;
     }
+    
 }
 
 new Cook().createForm();
