@@ -37,11 +37,12 @@ class Cook {
         this.form.render();
     }
     ;
+    ;
 }
 class InputField {
     constructor(name, label) {
         this.saveToLocalStorage = (data) => {
-            if (this.container)
+            if (this.name)
                 localStorage.setItem(this.name, JSON.stringify(data));
         };
         this.getItemsFromLocalStorage = () => {
@@ -51,23 +52,20 @@ class InputField {
                 console.log(JSON.parse(value));
             }
         };
-        this.container = document.createElement('div');
         this.element = document.createElement('input');
-        this.labelelement = document.createElement('label');
         this.name = name;
         this.label = label;
         this.element.name = this.name;
-        this.element.id = this.name;
         this.element.type = AddRecipe.nameInput;
-        this.labelelement.htmlFor = this.name;
-        this.labelelement.innerText = this.label + ': ';
-        this.container.id = this.name + 'container';
-        this.container.className = 'formInput';
-        this.container.appendChild(this.labelelement);
-        this.container.appendChild(this.element);
     }
     render() {
-        return this.container;
+        const div = document.createElement('div');
+        const label = document.createElement('label');
+        label.htmlFor = this.element.id;
+        label.innerHTML = this.label;
+        div.appendChild(label);
+        div.appendChild(this.element);
+        return div;
     }
     getvalue() {
         return this.element.value;
@@ -77,7 +75,7 @@ class InputField {
 class CheckboxField {
     constructor(name, label) {
         this.saveToLocalStorage = (data) => {
-            if (this.container)
+            if (this.name)
                 localStorage.setItem(this.name, JSON.stringify(data));
         };
         this.getItemsFromLocalStorage = () => {
@@ -87,23 +85,20 @@ class CheckboxField {
                 console.log(JSON.parse(value));
             }
         };
-        this.container = document.createElement('div');
         this.element = document.createElement('input');
-        this.labelelement = document.createElement('label');
         this.name = name;
         this.label = label;
         this.element.name = this.name;
-        this.element.id = this.name;
         this.element.type = AddRecipe.checkboxInput;
-        this.labelelement.htmlFor = this.name;
-        this.labelelement.innerText = this.label + ': ';
-        this.container.id = this.name + 'container';
-        this.container.className = 'formInput';
-        this.container.appendChild(this.labelelement);
-        this.container.appendChild(this.element);
     }
     render() {
-        return this.container;
+        const div = document.createElement('div');
+        const label = document.createElement('label');
+        label.htmlFor = this.element.id;
+        label.innerHTML = this.label;
+        div.appendChild(label);
+        div.appendChild(this.element);
+        return div;
     }
     getvalue() {
         return this.element.checked;
@@ -113,7 +108,7 @@ class CheckboxField {
 class TextAreaField {
     constructor(name, label) {
         this.saveToLocalStorage = (data) => {
-            if (this.container)
+            if (this.name)
                 localStorage.setItem(this.name, JSON.stringify(data));
         };
         this.getItemsFromLocalStorage = () => {
@@ -123,23 +118,20 @@ class TextAreaField {
                 console.log(JSON.parse(value));
             }
         };
-        this.container = document.createElement('div');
         this.element = document.createElement('input');
-        this.labelelement = document.createElement('label');
         this.name = name;
         this.label = label;
         this.element.name = this.name;
-        this.element.id = this.name;
         this.element.type = AddRecipe.textAreaInput;
-        this.labelelement.htmlFor = this.name;
-        this.labelelement.innerText = this.label + ': ';
-        this.container.id = this.name + 'container';
-        this.container.className = 'formInput';
-        this.container.appendChild(this.labelelement);
-        this.container.appendChild(this.element);
     }
     render() {
-        return this.container;
+        const div = document.createElement('div');
+        const label = document.createElement('label');
+        label.htmlFor = this.element.id;
+        label.innerHTML = this.label;
+        div.appendChild(label);
+        div.appendChild(this.element);
+        return div;
     }
     getvalue() {
         return this.element.value;
@@ -163,6 +155,8 @@ class SubmitButton {
         this.name = name;
         this.element.name = this.name;
         this.element.type = AddRecipe.submitInput;
+        localStorage.setItem('name', 'element');
+        localStorage.getItem('element');
     }
     render() {
         const div = document.createElement('div');
@@ -176,6 +170,8 @@ class Form {
     constructor(id) {
         this.fields = new Array();
         this.formElement = document.getElementById(id);
+        localStorage.setItem('fields', 'formElement');
+        localStorage.getItem('formElement');
     }
     render() {
         this.fields.forEach(field => this.formElement.appendChild(field.render()));

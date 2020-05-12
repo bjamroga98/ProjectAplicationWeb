@@ -17,4 +17,6 @@ class createprofile{
         this.password = (<HTMLInputElement>document.getElementById("Password")).value;
         this.Register();
     }
+
 }
+
