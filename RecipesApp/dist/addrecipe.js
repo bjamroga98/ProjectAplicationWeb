@@ -1,193 +1,32 @@
-var AddRecipe;
-(function (AddRecipe) {
-    AddRecipe["nameInput"] = "name";
-    AddRecipe["ingredientInput"] = "ingredient";
-    AddRecipe["textAreaInput"] = "textarea";
-    AddRecipe["preTime"] = "pretime";
-    AddRecipe["checkboxInput"] = "checkbox";
-    AddRecipe["submitInput"] = "submit";
-})(AddRecipe || (AddRecipe = {}));
-class Cook {
-    constructor() {
-        this.saveToLocalStorage = (data) => {
-            if (this.form)
-                localStorage.setItem(this.form, JSON.stringify(data));
-        };
-        this.getItemsFromLocalStorage = () => {
-            const items = Object.assign({}, localStorage);
-            for (const [key, value] of Object.entries(items)) {
-                console.log(key, value);
-                console.log(JSON.parse(value));
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+require("./styles/styles.scss");
+class Recipe {
+    constructor(title, ingredients) {
+        this._title = title;
+        this._ingredients = ingredients;
+    }
+    toHTML() {
+        let li = document.createElement("li");
+        li.innerHTML = this._title;
+        li.onclick = () => this.updateIngredientsList();
+        li.setAttribute("class", "list-group-item");
+        return li;
+    }
+    updateIngredientsList() {
+        let ingredientList = document.getElementById("ingredient-list");
+        let ingredients = this._ingredients.split(",");
+        ingredientList.innerHTML = "";
+        for (let ingredient of ingredients) {
+            if (ingredient === "") {
+                continue;
             }
-        };
-        this.form = new Form('box');
-    }
-    createForm() {
-        let name = new InputField('textfieldname', 'Name Recipe:');
-        let ingredient = new InputField('textfieldingredient', 'Ingredient:');
-        let text = new TextAreaField('text', 'Text:');
-        let pretime = new InputField('textfieldpretime', 'PreTime:');
-        let checkbox = new CheckboxField('checkboxfield', 'categories:');
-        this.form.button = new SubmitButton('submitButton', 'button');
-        this.form.fields.push(name);
-        this.form.fields.push(ingredient);
-        this.form.fields.push(text);
-        this.form.fields.push(pretime);
-        this.form.fields.push(checkbox);
-        this.form.render();
-    }
-    ;
-    ;
-}
-class InputField {
-    constructor(name, label) {
-        this.saveToLocalStorage = (data) => {
-            if (this.name)
-                localStorage.setItem(this.name, JSON.stringify(data));
-        };
-        this.getItemsFromLocalStorage = () => {
-            const items = Object.assign({}, localStorage);
-            for (const [key, value] of Object.entries(items)) {
-                console.log(key, value);
-                console.log(JSON.parse(value));
-            }
-        };
-        this.element = document.createElement('input');
-        this.name = name;
-        this.label = label;
-        this.element.name = this.name;
-        this.element.type = AddRecipe.nameInput;
-    }
-    render() {
-        const div = document.createElement('div');
-        const label = document.createElement('label');
-        label.htmlFor = this.element.id;
-        label.innerHTML = this.label;
-        div.appendChild(label);
-        div.appendChild(this.element);
-        return div;
-    }
-    getvalue() {
-        return this.element.value;
-    }
-    ;
-}
-class CheckboxField {
-    constructor(name, label) {
-        this.saveToLocalStorage = (data) => {
-            if (this.name)
-                localStorage.setItem(this.name, JSON.stringify(data));
-        };
-        this.getItemsFromLocalStorage = () => {
-            const items = Object.assign({}, localStorage);
-            for (const [key, value] of Object.entries(items)) {
-                console.log(key, value);
-                console.log(JSON.parse(value));
-            }
-        };
-        this.element = document.createElement('input');
-        this.name = name;
-        this.label = label;
-        this.element.name = this.name;
-        this.element.type = AddRecipe.checkboxInput;
-    }
-    render() {
-        const div = document.createElement('div');
-        const label = document.createElement('label');
-        label.htmlFor = this.element.id;
-        label.innerHTML = this.label;
-        div.appendChild(label);
-        div.appendChild(this.element);
-        return div;
-    }
-    getvalue() {
-        return this.element.checked;
-    }
-    ;
-}
-class TextAreaField {
-    constructor(name, label) {
-        this.saveToLocalStorage = (data) => {
-            if (this.name)
-                localStorage.setItem(this.name, JSON.stringify(data));
-        };
-        this.getItemsFromLocalStorage = () => {
-            const items = Object.assign({}, localStorage);
-            for (const [key, value] of Object.entries(items)) {
-                console.log(key, value);
-                console.log(JSON.parse(value));
-            }
-        };
-        this.element = document.createElement('input');
-        this.name = name;
-        this.label = label;
-        this.element.name = this.name;
-        this.element.type = AddRecipe.textAreaInput;
-    }
-    render() {
-        const div = document.createElement('div');
-        const label = document.createElement('label');
-        label.htmlFor = this.element.id;
-        label.innerHTML = this.label;
-        div.appendChild(label);
-        div.appendChild(this.element);
-        return div;
-    }
-    getvalue() {
-        return this.element.value;
-    }
-    ;
-}
-class SubmitButton {
-    constructor(name, label) {
-        this.saveToLocalStorage = (data) => {
-            if (this.name)
-                localStorage.setItem(this.name, JSON.stringify(data));
-        };
-        this.getItemsFromLocalStorage = () => {
-            const items = Object.assign({}, localStorage);
-            for (const [key, value] of Object.entries(items)) {
-                console.log(key, value);
-                console.log(JSON.parse(value));
-            }
-        };
-        this.element = document.createElement('input');
-        this.name = name;
-        this.element.name = this.name;
-        this.element.type = AddRecipe.submitInput;
-        localStorage.setItem('name', 'element');
-        localStorage.getItem('element');
-    }
-    render() {
-        const div = document.createElement('div');
-        div.innerText = "Add";
-        div.appendChild(this.element);
-        return div;
-    }
-    ;
-}
-class Form {
-    constructor(id) {
-        this.fields = new Array();
-        this.formElement = document.getElementById(id);
-        localStorage.setItem('fields', 'formElement');
-        localStorage.getItem('formElement');
-    }
-    render() {
-        this.fields.forEach(field => this.formElement.appendChild(field.render()));
-        this.formElement.appendChild(this.button.render());
-        this.formElement.addEventListener('submit', (event) => {
-            event.preventDefault();
-            alert(this.getValue());
-        });
-    }
-    getValue() {
-        let value = '';
-        this.fields.forEach(field => {
-            value += `${field.label}: ${field.getvalue()}\n`;
-        });
-        return value;
+            ;
+            let li = document.createElement("li");
+            li.innerHTML = ingredient;
+            li.setAttribute("class", "list-group-item");
+            ingredientList.appendChild(li);
+        }
     }
 }
-new Cook().createForm();
 //# sourceMappingURL=addrecipe.js.map

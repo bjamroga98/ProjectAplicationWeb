@@ -23,7 +23,28 @@
     <h2>Recipe:</h2>
     <div class="examples" id="examples"></div>
 
-    <a href="addrecipe.html"><img src="images/add.png"></a>
+    <div class="container">
+        <div class="row">
+          <div class="col-sm-4">
+            <ul class="list-group" id="recipe-list"></ul>
+          </div>
+          <div class="col-sm-4">
+            <ul class="list-group" id="ingredient-list"></ul>
+          </div>
+          <div class="col-sm-4">
+            <h2>If you want different recipe you can add your:</h2>
+            <form>
+              <h2>Name Recipe</h2><span id="namerecipe">Add title new recipe</span><br>
+              <input class="form-control" id="title" type="text" placeholder=""/>
+              <h2>Ingredients and Descriptions</h2><span id="tip">Add some ingredients and descriptions to recipe</span><br/>
+              <textarea class="form-control" id="ingredients" type="text" placeholder=""></textarea><br>
+              <button class="btn btn-purple" id="add">Add</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+
 
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="scripts/recipeLoader.js"></script>
@@ -36,6 +57,7 @@
     <script src="scripts/recipeExample.js"></script>
     <script src="scripts/ingredient.js"></script>
     <script src="scripts/bootstrapper.js"></script>
+    <script src="scripts/addrecipe.js"></script>
     
     <footer>
         <img class="footer" src="images/footer.png" />

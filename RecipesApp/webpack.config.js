@@ -17,6 +17,20 @@ const config = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: ''
-  }
+  },
+  
 };
-module.exports = config;
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.s[ac]ss$/i,
+        use: [
+          'style-loader',
+          'css-loader',
+          'sass-loader',
+        ],
+      },
+    ],
+  },
+};
