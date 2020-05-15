@@ -29,4 +29,12 @@ class Recipe {
         }
     }
 }
+class RecipeBox {
+    constructor() {
+        document.getElementById("add").addEventListener("click", this.addRecipe.bind(this));
+        this._list = [];
+    }
+    addRecipe(e) {
+    }
+}
 //# sourceMappingURL=addrecipe.js.map

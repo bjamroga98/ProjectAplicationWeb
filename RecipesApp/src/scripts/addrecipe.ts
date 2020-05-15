@@ -31,4 +31,17 @@ class Recipe {
     }
     
 }
+class RecipeBox{
+	private _list: Recipe[];
+
+	constructor() {
+		document.getElementById("add").addEventListener("click",this.addrecipe.bind(this));
+		this._list=[];
+	}
+	private addrecipe(e:Event){
+
+	}
+}
+new RecipeBox();
+
 
