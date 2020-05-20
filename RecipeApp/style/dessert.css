@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    padding:0;
+}
+body {
+    background: lightgreen;
+    margin: 40px;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  .form-style{
+    width: 320px;
+    background: greenyellow;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    
+  }
+  input{
+    width: 100%;
+    background: whitesmoke;
+    border: 1px solid;
+    border-radius: 3px;
+    padding: 0px 20px;
+    box-sizing: border-box;
+  }
+
+  textarea{
+    width: 100%;
+    background: whitesmoke;
+    border: 1px solid;
+    border-radius: 3px;
+    padding: 0px 20px;
+    box-sizing: border-box;
+  }
+
+  h1, h2 {
+    margin-bottom: 20px;
+    font-family: 'Pacifico';
+    color: #e62739;
+  }
+  
+  .btn-purple {
+    text-transform: uppercase;
+    color: #e1e8f0;
+    background-color: #9068be;
+    cursor: pointer;
+  }
+  
+  #recipe-list ul:hover {
+    cursor: pointer;
+    background-color: #9068be;
+    color: #e1e8f0;
+  }
+  
+  .col-sm-4 {
+    margin-bottom: 20px;
+  }
+  #logo
+{
+    position: relative;
+    
+}

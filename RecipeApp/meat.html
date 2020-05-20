@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/meat.css">
+    <title>Meat Dishes</title>
+</head>
+<body>
+    <img id="logo" src="images/banner.png">
+<a href="recipe.html"><img src="images/icon.png"></a>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+        <h1>Recipes</h1>
+        <ul class="list-group" id="recipe-list"></ul>
+      </div>
+      <div class="col-sm-4">
+        <h1>Ingredients and Descriptions</h1>
+        <ul class="list-group" id="ingredient-list"></ul>
+      </div>
+      <div class="form-style">
+        <form>
+          <h2>Name Recipe</h2>
+          <input class="form-control" id="title" type="text" placeholder=""/>
+          <h2>Ingredients</h2><span class="tip">Seperated by commas</span><br/>
+          <textarea class="form-control" id="ingredients" type="text" placeholder=""></textarea><br>
+          <input type="button" class="btn btn-purple" id="addmeat" value="Add Meat Dishes">
+        </form>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <img src="images/footer.png">
+  </footer>
+  <script src="dist/meat.js"></script>
+</body>
+</html>

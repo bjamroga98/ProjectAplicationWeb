@@ -39,8 +39,9 @@ class RecipeBox{
 		this._list=[];
 	}
 	private addrecipe(e:Event){
-
+		
 	}
+	
 }
 new RecipeBox();
 

@@ -31,10 +31,11 @@ class Recipe {
 }
 class RecipeBox {
     constructor() {
-        document.getElementById("add").addEventListener("click", this.addRecipe.bind(this));
+        document.getElementById("add").addEventListener("click", this.addrecipe.bind(this));
         this._list = [];
     }
-    addRecipe(e) {
+    addrecipe(e) {
     }
 }
+new RecipeBox();
 //# sourceMappingURL=addrecipe.js.map
