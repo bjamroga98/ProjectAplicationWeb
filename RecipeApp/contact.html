@@ -15,38 +15,24 @@
         <a  href="about.html">About</a>
       </div> 
       <h1><b><i>If you have any questions you can write to us!</i></b></h1>
-      <div class="contact" id="contact">
-        <h2 onClick="contactClass()">Form with contact with us!</h2>
-        <form>
-          <div class="row">
-            <div class="col-2">
-              <label>Name</label>
-              <input type="text" name="" class="text" placeholder="">
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-2">
-              <label>Email</label>
-              <input type="text" name="" class="text" placeholder="">
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-1">
-              <label>Message</label>
-              <textarea placeholder=""></textarea>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-1">
-              <input type="submit" name="" value="Send Message">
-            </div>
-          </div>
-        </form>
+      <div class="container">
+        <h1>Contact</h1>
+            <p class="" id="email-list"></p>
+            <p class="" id="name-list"></p>
+            <p class="" id="message-list"></p>
+            <form>
+              <h2>Email:</h2>
+              <input class="form-control" id="email" type="text" placeholder=""/>
+              <h2>Name:</h2>
+              <input class="form-control" id="name" type="text" placeholder=""/>
+              <h2>Message:</h2>
+              <textarea class="form-control" id="message" type="text" placeholder=""></textarea><br>
+              <input type="button" class="btn" id="send" value="Send Message">
+            </form>
       </div>
       <footer>
         <img src="images/footer.png">
       </footer>
-
       <script src="dist/contact.js"></script>
   
 </body>

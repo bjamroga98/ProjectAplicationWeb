@@ -6,15 +6,15 @@ var dessertRecipe = /** @class */ (function () {
     }
     dessertRecipe.prototype.Element = function () {
         var _this = this;
-        var ul = document.createElement("ul");
-        ul.innerHTML = this._title;
-        ul.onclick = function () { return _this.IngredientsList(); };
-        ul.setAttribute("class", "list-group-item");
-        return ul;
+        var p = document.createElement("p");
+        p.innerHTML = this._title;
+        p.onclick = function () { return _this.IngredientsList(); };
+        p.setAttribute("class", "item");
+        return p;
     };
     
     dessertRecipe.prototype.IngredientsList = function () {
-        var ingredientList = document.getElementById("ingredient-list");
+        var ingredientList = document.getElementById("ingredient");
         var ingredients = this._ingredients.split(",");
         ingredientList.innerHTML = "";
         for (var _i = 0, ingredients_1 = ingredients; _i < ingredients_1.length; _i++) {
@@ -23,10 +23,10 @@ var dessertRecipe = /** @class */ (function () {
                 continue;
             }
             ;
-            var ul = document.createElement("ul");
-            ul.innerHTML = ingredient;
-            ul.setAttribute("class", "list-group-item");
-            ingredientList.appendChild(ul);
+            var p = document.createElement("p");
+            p.innerHTML = ingredient;
+            p.setAttribute("class", "item");
+            ingredientList.appendChild(p);
         }
     };
     return dessertRecipe;
@@ -38,13 +38,13 @@ var dessertBox = /** @class */ (function () {
         this.updateLocal = function (dessert) {
             localStorage.setItem("dessert", JSON.stringify(dessert));
         };
-        document.getElementById("adddessert").addEventListener("click", this.addRecipe.bind(this));
+        document.getElementById("adddessert").addEventListener("click", this.add.bind(this));
         this._dessertlist = [];
         this.getLocal();
         this.updateView(true);
     }
     
-    dessertBox.prototype.addRecipe = function (e) {
+    dessertBox.prototype.add = function (e) {
         e.preventDefault();
         var titleElem = document.getElementById("title");
         var ingredientsElem = document.getElementById("ingredients");
@@ -80,4 +80,4 @@ var dessertBox = /** @class */ (function () {
     };
     return dessertBox;
 }());
-var app = new dessertBox();
+ new dessertBox();

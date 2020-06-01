@@ -38,14 +38,14 @@ body {
     color: #e62739;
   }
   
-  .btn-purple {
+  .btn{
     text-transform: uppercase;
     color: #e1e8f0;
     background-color: #9068be;
     cursor: pointer;
   }
   
-  #recipe-list ul:hover {
+  #recipe p:hover {
     cursor: pointer;
     background-color: #9068be;
     color: #e1e8f0;

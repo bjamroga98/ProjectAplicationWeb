@@ -6,15 +6,15 @@ var pestoRecipe = /** @class */ (function () {
     }
     pestoRecipe.prototype.Element = function () {
         var _this = this;
-        var ul = document.createElement("ul");
-        ul.innerHTML = this._title;
-        ul.onclick = function () { return _this.IngredientsList(); };
-        ul.setAttribute("class", "list-group-item");
-        return ul;
+        var p = document.createElement("p");
+        p.innerHTML = this._title;
+        p.onclick = function () { return _this.IngredientsList(); };
+        p.setAttribute("class", "item");
+        return p;
     };
     
     pestoRecipe.prototype.IngredientsList = function () {
-        var ingredientList = document.getElementById("ingredient-list");
+        var ingredientList = document.getElementById("ingredient");
         var ingredients = this._ingredients.split(",");
         ingredientList.innerHTML = "";
         for (var _i = 0, ingredients_1 = ingredients; _i < ingredients_1.length; _i++) {
@@ -23,10 +23,10 @@ var pestoRecipe = /** @class */ (function () {
                 continue;
             }
             ;
-            var ul = document.createElement("ul");
-            ul.innerHTML = ingredient;
-            ul.setAttribute("class", "list-group-item");
-            ingredientList.appendChild(ul);
+            var p = document.createElement("p");
+            p.innerHTML = ingredient;
+            p.setAttribute("class", "item");
+            ingredientList.appendChild(p);
         }
     };
     return pestoRecipe;
@@ -38,13 +38,13 @@ var pestoBox = /** @class */ (function () {
         this.updateLocal = function (pesto) {
             localStorage.setItem("pesto", JSON.stringify(pesto));
         };
-        document.getElementById("addpesto").addEventListener("click", this.addRecipe.bind(this));
+        document.getElementById("addpesto").addEventListener("click", this.add.bind(this));
         this._pestolist = [];
         this.getLocal();
         this.updateView(true);
     }
     
-    pestoBox.prototype.addRecipe = function (e) {
+    pestoBox.prototype.add = function (e) {
         e.preventDefault();
         var titleElem = document.getElementById("title");
         var ingredientsElem = document.getElementById("ingredients");
@@ -67,7 +67,7 @@ var pestoBox = /** @class */ (function () {
         }
     };
     pestoBox.prototype.updateView = function (initial, recipe) {
-        var table = document.getElementById("recipe-list");
+        var table = document.getElementById("recipe");
         if (initial) {
             for (var _i = 0, _a = this._pestolist; _i < _a.length; _i++) {
                 var recipe_1 = _a[_i];
@@ -80,4 +80,4 @@ var pestoBox = /** @class */ (function () {
     };
     return pestoBox;
 }());
-var app = new pestoBox();
+ new pestoBox();
