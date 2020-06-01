@@ -60,7 +60,7 @@
 
 .preview {
   display: flex;
-  width: 90%;
+  width: 110%;
   border: 2px solid #d3baa0;
 }
 .preview img {
