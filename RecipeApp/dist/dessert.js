@@ -67,7 +67,7 @@ var dessertBox = /** @class */ (function () {
         }
     };
     dessertBox.prototype.updateView = function (initial, recipe) {
-        var table = document.getElementById("recipe-list");
+        var table = document.getElementById("recipe");
         if (initial) {
             for (var _i = 0, _a = this._dessertlist; _i < _a.length; _i++) {
                 var recipe_1 = _a[_i];
