@@ -1,4 +1,5 @@
 import dessertRecipe from "./dessert"
+import "./style/dessert.scss"
 class dessertBox {
 
     _dessertlist: dessertRecipe[];

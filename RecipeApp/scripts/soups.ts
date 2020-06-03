@@ -1,4 +1,5 @@
 import soupRecipe from "./soup"
+import "./style/soup.scss"
 class soupBox {
 
     _souplist: soupRecipe[];

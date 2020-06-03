@@ -1,4 +1,5 @@
 import meatRecipe from "./meat"
+import "./style/meat.scss"
 class meatBox {
 
     _meatlist: meatRecipe[];

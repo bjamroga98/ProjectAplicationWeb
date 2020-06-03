@@ -1,4 +1,5 @@
 import pestoRecipe from "./app"
+import "./style/app.scss"
 class pestoBox {
 
     _pestolist: pestoRecipe[];

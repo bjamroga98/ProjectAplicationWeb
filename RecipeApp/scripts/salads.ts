@@ -1,4 +1,5 @@
 import saladRecipe from "./salad"
+import "./style/salad.scss"
 class saladBox {
 
     _saladlist: saladRecipe[];

@@ -1,4 +1,5 @@
 import vegeRecipe from "./vege"
+import "./style/vege.scss"
 class vegeBox {
 
     _vegelist: vegeRecipe[];
